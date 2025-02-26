@@ -25,7 +25,7 @@ chat_template = ChatPromptTemplate(
 )
 
 # Initialize Gemini AI Model-LOGIC2
-chat_model = ChatGoogleGenerativeAI(api_key="AIzaSyBqdDoqF8CU8UOp7AoyKCSwOCyPUKaJEhw", model="gemini-2.0-flash-exp")
+chat_model = ChatGoogleGenerativeAI(api_key="your_api_key", model="gemini-2.0-flash-exp")
 
 # Chain Components
 chain = chat_template | chat_model | parser
