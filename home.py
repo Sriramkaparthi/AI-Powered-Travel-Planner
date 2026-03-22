@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import json
 from langchain_core.prompts import ChatPromptTemplate
@@ -25,7 +26,10 @@ chat_template = ChatPromptTemplate(
 )
 
 # Initialize Gemini AI Model-LOGIC2
-chat_model = ChatGoogleGenerativeAI(api_key="your_api_key", model="gemini-2.0-flash-exp")
+chat_model = ChatGoogleGenerativeAI(
+    api_key=os.getenv("GOOGLE_API_KEY"),
+    model="gemini-2.0-flash-exp"
+)
 
 # Chain Components
 chain = chat_template | chat_model | parser
